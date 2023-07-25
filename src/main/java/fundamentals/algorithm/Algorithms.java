@@ -5,10 +5,17 @@ import java.util.Scanner;
 
 public class Algorithms {
     public static void main(String[] args) {
-        int[] nums = intArray();
-        System.out.println(Arrays.toString(nums));
-        minMax(nums);
+//        int[] nums = intArray();
+//        System.out.println(Arrays.toString(nums));
+//        minMax(nums);
+
+        int[] nums = {23, 12, 87, -13, 43, 1, -15, 25, 18, 94, 5};
+
+        LinearSearch linearSearch = new LinearSearch();
+        linearSearch.methodCall(nums, 1);
     }
+
+
 
     public static int[] intArray(){
         Scanner sc = new Scanner(System.in);
