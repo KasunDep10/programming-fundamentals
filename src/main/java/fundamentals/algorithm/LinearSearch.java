@@ -4,6 +4,7 @@ public class LinearSearch {
     public void methodCall(int[] nums, int search){
         forLoop(nums, search);
         whileLoop(nums, search);
+        doWhileLoop(nums, search);
     }
 
     private void forLoop(int[] nums, int search){
@@ -25,6 +26,18 @@ public class LinearSearch {
             }
             i++;
         }
+        System.out.println("The searched number does not exist");
+    }
+
+    public void doWhileLoop(int[] nums, int search){
+        int i = 0;
+        do {
+            if(nums[i] == search){
+                System.out.printf("%s is found at index: %d \n", search, i);
+                return;
+            }
+            i++;
+        } while (i < nums.length);
         System.out.println("The searched number does not exist");
     }
 }
