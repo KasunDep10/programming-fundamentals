@@ -5,6 +5,7 @@ public class LinearSearch {
         forLoop(nums, search);
         whileLoop(nums, search);
         doWhileLoop(nums, search);
+        recursion(nums, search, 0);
     }
 
     private void forLoop(int[] nums, int search){
@@ -39,5 +40,18 @@ public class LinearSearch {
             i++;
         } while (i < nums.length);
         System.out.println("The searched number does not exist");
+    }
+
+    public void recursion(int[] nums, int search, int i){
+        if(i == nums.length){
+            System.out.println("The searched number does not exist");
+            return;
+        }
+        if(search == nums[i]){
+            System.out.printf("%s is found at index: %d \n", search, i);
+            return;
+        }
+        i++;
+        recursion(nums, search, i);
     }
 }
