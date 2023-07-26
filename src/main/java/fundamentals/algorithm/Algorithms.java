@@ -12,7 +12,11 @@ public class Algorithms {
         int[] nums = {23, 12, 87, -13, 43, 1, -15, 25, 18, 94, 5};
 
         LinearSearch linearSearch = new LinearSearch();
-        linearSearch.methodCall(nums, 1);
+//        linearSearch.methodCall(nums, 1);
+
+        BinarySearch binarySearch = new BinarySearch();
+        int[] nums2 = {-53, -32, 1, 5, 7, 18, 24, 33, 52, 67, 85};
+        binarySearch.methodCall(nums2, 7);
     }
 
 
