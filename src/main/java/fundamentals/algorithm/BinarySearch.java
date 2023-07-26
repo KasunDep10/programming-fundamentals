@@ -5,6 +5,7 @@ public class BinarySearch {
         forLoop(nums, search);
         whileLoop(nums, search);
         doWhileLoop(nums, search);
+        recursion(nums, search, 0, nums.length);
     }
 
 
@@ -78,5 +79,28 @@ public class BinarySearch {
         } while (start < end);
 
         System.out.println("The searched number does not exist");
+    }
+
+    private void recursion(int[] nums, int search, int start, int end){
+        if (search < nums[start] || search > nums[end - 1]) {
+            System.out.println("The searched number does not exist");
+            return;
+        }
+        if(start >= end){
+            System.out.println("The searched number does not exist");
+            return;
+        }
+        int mid = (start + end)/2;
+
+        if(search == nums[mid]){
+            System.out.printf("%s is found at index: %d \n", search, mid);
+            return;
+        } else if (search < nums[mid]) {
+            end = mid;
+        } else {
+            start = mid + 1;
+        }
+        recursion(nums, search, start, end);
+
     }
 }
