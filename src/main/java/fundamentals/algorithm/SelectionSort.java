@@ -6,6 +6,8 @@ public class SelectionSort {
     public void methodCall(int[] nums) {
         forLoopMin(nums);
         forLoopMax(nums);
+        whileMin(nums);
+        whileMax(nums);
     }
 
 
@@ -40,4 +42,46 @@ public class SelectionSort {
         }
         System.out.println("forLoopMax " + Arrays.toString(nums));
     }
+
+
+    private void whileMin(int[] nums){
+        int i = 0;
+        while(i < nums.length){
+            int min = nums[i];
+            int minIndex = i;
+            int j = i;
+            while(j < nums.length){
+                if(min > nums[j]){
+                    min = nums[j];
+                    minIndex = j;
+                }
+                j++;
+            }
+            nums[minIndex] = nums[i];
+            nums[i] = min;
+            i++;
+        }
+        System.out.println("whileMin " + Arrays.toString(nums));
+    }
+
+    private void whileMax(int[] nums){
+        int i = nums.length - 1;
+        while(i >= 0){
+            int max = nums[i];
+            int maxIndex = i;
+            int j = i;
+            while(j >= 0){
+                if(max < nums[j]){
+                    max = nums[j];
+                    maxIndex = j;
+                }
+                j--;
+            }
+            nums[maxIndex] = nums[i];
+            nums[i] = max;
+            i--;
+        }
+        System.out.println("whileMax " + Arrays.toString(nums));
+    }
+
 }
