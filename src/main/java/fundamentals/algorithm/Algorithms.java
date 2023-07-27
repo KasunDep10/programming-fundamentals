@@ -16,7 +16,10 @@ public class Algorithms {
 
         BinarySearch binarySearch = new BinarySearch();
         int[] nums2 = {-53, -32, 1, 5, 7, 18, 24, 33, 52, 67, 85};
-        binarySearch.methodCall(nums2, 7);
+//        binarySearch.methodCall(nums2, 7);
+
+        SelectionSort selectionSort = new SelectionSort();
+        selectionSort.methodCall(nums);
     }
 
 
