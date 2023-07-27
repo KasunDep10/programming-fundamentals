@@ -10,6 +10,9 @@ public class SelectionSort {
         whileMax(nums);
         doWhileMin(nums);
         doWhileMax(nums);
+        recursionMin(nums, nums[0], 0, 0, 0);
+        recursionMax(nums, nums[nums.length - 1], (nums.length - 1), (nums.length - 1),
+                (nums.length - 1));
     }
 
 
@@ -87,7 +90,7 @@ public class SelectionSort {
     }
 
 
-    public void doWhileMin(int[] nums){
+    private void doWhileMin(int[] nums){
         int i = 0;
         do {
             int min = nums[i];
@@ -110,7 +113,7 @@ public class SelectionSort {
         System.out.println("doWhileMin " + Arrays.toString(nums));
     }
 
-    public void doWhileMax(int[] nums){
+    private void doWhileMax(int[] nums){
         int i = nums.length - 1;
         do {
             int max = nums[i];
@@ -131,6 +134,51 @@ public class SelectionSort {
         } while (i >= 0);
 
         System.out.println("doWhileMax " + Arrays.toString(nums));
+    }
+
+
+    private void recursionMin(int[] nums, int min, int minIndex, int i, int j){
+        if(i == nums.length) return;
+
+        if(j == nums.length) {
+            nums[minIndex] = nums[i];
+            nums[i] = min;
+            i++;
+            if(i == nums.length) {
+                System.out.println("RecursionMin "+ Arrays.toString(nums));
+                return;
+            }
+            recursionMin(nums, nums[i], i, i, i);
+            return;
+        }
+        if(min > nums[j]){
+            min = nums[j];
+            minIndex = j;
+        }
+        j++;
+        recursionMin(nums, min, minIndex, i, j);
+    }
+
+    private void recursionMax(int[] nums, int max, int maxIndex, int i, int j){
+        if(i < 0) return;
+
+        if(j < 0) {
+            nums[maxIndex] = nums[i];
+            nums[i] = max;
+            i--;
+            if(i < 0) {
+                System.out.println("RecursionMax "+ Arrays.toString(nums));
+                return;
+            }
+            recursionMax(nums, nums[i], i, i, i);
+            return;
+        }
+        if(max < nums[j]){
+            max = nums[j];
+            maxIndex = j;
+        }
+        j--;
+        recursionMax(nums, max, maxIndex, i, j);
     }
 
 }
