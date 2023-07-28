@@ -8,6 +8,8 @@ public class BubbleSort {
         forLoopMax(nums);
         whileMin(nums);
         whileMax(nums);
+        doWhileMin(nums);
+        doWhileMax(nums);
     }
 
 
@@ -76,5 +78,44 @@ public class BubbleSort {
         }
 
         System.out.println("whileMax " + Arrays.toString(nums));
+    }
+
+
+    private void doWhileMin(int[] nums){
+        int i = nums.length - 1;
+        do {
+            int temp;
+            int j = nums.length - 1;
+            do {
+                if(nums[j] < nums[j - 1]){
+                    temp = nums[j];
+                    nums[j] = nums[j - 1];
+                    nums[j - 1] = temp;
+                }
+                j--;
+            } while (j < nums.length - 1 - i);
+            i--;
+        } while (i > 0);
+
+        System.out.println("doWhileMin " + Arrays.toString(nums));
+    }
+
+    private void doWhileMax(int[] nums){
+        int i = 0;
+        do {
+            int temp;
+            int j = 0;
+            do {
+                if (nums[j] > nums[j + 1]) {
+                    temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                }
+                j++;
+            } while (j < nums.length - 1 - i);
+            i++;
+        } while (i < nums.length - 1);
+
+        System.out.println("doWhileMax " + Arrays.toString(nums));
     }
 }
