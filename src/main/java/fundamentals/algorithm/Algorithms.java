@@ -19,7 +19,10 @@ public class Algorithms {
 //        binarySearch.methodCall(nums2, 7);
 
         SelectionSort selectionSort = new SelectionSort();
-        selectionSort.methodCall(nums);
+//        selectionSort.methodCall(nums);
+
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.methodCall(nums);
     }
 
 
