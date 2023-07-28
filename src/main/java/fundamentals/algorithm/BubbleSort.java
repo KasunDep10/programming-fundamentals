@@ -10,6 +10,7 @@ public class BubbleSort {
         whileMax(nums);
         doWhileMin(nums);
         doWhileMax(nums);
+        recursion(nums, 0, 0);
     }
 
 
@@ -117,5 +118,29 @@ public class BubbleSort {
         } while (i < nums.length - 1);
 
         System.out.println("doWhileMax " + Arrays.toString(nums));
+    }
+
+
+    private void recursion(int[] nums, int i, int j){
+        if(i == (nums.length - 1)){
+            System.out.println("recursion " + Arrays.toString(nums));
+            return;
+        }
+        if(j == (nums.length - 1 - i)){
+            j = 0;
+            i++;
+            recursion(nums, i, j);
+            return;
+        }
+        if(nums[j] > nums[j + 1]){
+            int temp = nums[j];
+            nums[j] = nums[j + 1];
+            nums[j + 1] = temp;
+            j++;
+            recursion(nums, i, j);
+            return;
+        }
+        j++;
+        recursion(nums, i, j);
     }
 }
