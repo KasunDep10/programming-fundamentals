@@ -6,6 +6,7 @@ public class LinearInsertionSort {
     public void methodCall(int[] nums) {
         forLoop(nums);
         whileLoop(nums);
+        doWhileLoop(nums);
     }
 
     private void forLoop(int[] nums) {
@@ -48,5 +49,28 @@ public class LinearInsertionSort {
             i++;
         }
         System.out.println("While Loop " + Arrays.toString(nums));
+    }
+
+    private void doWhileLoop(int[] nums) {
+        int i = 1;
+        do {
+            if (nums[i] < nums[i - 1]) {
+                int temp = nums[i];
+                int j = 0;
+                do {
+                    if (temp < nums[j]) {
+                        int k = i;
+                        do {
+                            nums[k] = nums[k - 1];
+                            k--;
+                        } while (k > j);
+                        nums[j] = temp;
+                    }
+                    j++;
+                } while (j < i);
+            }
+            i++;
+        } while (i < nums.length);
+        System.out.println("DoWhile Loop " + Arrays.toString(nums));
     }
 }
