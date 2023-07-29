@@ -24,7 +24,10 @@ public class Algorithms {
 //        bubbleSort.methodCall(nums);
 
         LinearInsertionSort linearInsertionSort = new LinearInsertionSort();
-        linearInsertionSort.methodCall(nums);
+//        linearInsertionSort.methodCall(nums);
+
+        BinaryInsertionSort binaryInsertionSort = new BinaryInsertionSort();
+        binaryInsertionSort.methodCall(nums);
     }
 
 
