@@ -1,6 +1,5 @@
 package fundamentals.algorithm;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Algorithms {
@@ -22,8 +21,13 @@ public class Algorithms {
 //        selectionSort.methodCall(nums);
 
         BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.methodCall(nums);
+//        bubbleSort.methodCall(nums);
+
+        LinearInsertionSort linearInsertionSort = new LinearInsertionSort();
+        linearInsertionSort.methodCall(nums);
     }
+
+
 
 
 
