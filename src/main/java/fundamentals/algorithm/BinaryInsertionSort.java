@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class BinaryInsertionSort {
     public void methodCall(int[] nums) {
+        forLoop(nums);
         whileLoop(nums);
         doWhileLoop(nums);
     }
@@ -21,6 +22,21 @@ public class BinaryInsertionSort {
         }
         return start;
     }
+
+    private void forLoop(int[] nums){
+        for (int i = 1; i < nums.length; i++) {
+            if(nums[i] < nums[i-1]){
+                int temp = nums[i];
+                int place = binarySearch(nums, temp, i);
+                for (int j = i; j > place; j--) {
+                    nums[j] = nums[j - 1];
+                }
+                nums[place] = temp;
+            }
+        }
+        System.out.println("For Loop " + Arrays.toString(nums));
+    }
+
 
     private void whileLoop(int[] nums){
         int i = 1;
