@@ -7,6 +7,7 @@ public class BinaryInsertionSort {
         forLoop(nums);
         whileLoop(nums);
         doWhileLoop(nums);
+        recursion(nums, 1);
     }
 
 
@@ -75,6 +76,26 @@ public class BinaryInsertionSort {
         System.out.println("Do-While Loop " + Arrays.toString(nums));
     }
 
+    private void recursion(int[] nums, int i){
+        if(i == nums.length){
+            System.out.println("Recursion " + Arrays.toString(nums));
+            return;
+        }
+        if(nums[i] < nums[i-1]){
+            int temp = nums[i];
+            int place = binarySearch(nums, temp, i);
+            recursion2(nums, place, i);
+        }
+        i++;
+        recursion(nums, i);
+    }
+
+    private void recursion2(int[] nums, int place, int j) {
+        if(j <= place) return;
+        nums[j] = nums[j - 1];
+        j--;
+        recursion2(nums, place, j);
+    }
 
 
 }
