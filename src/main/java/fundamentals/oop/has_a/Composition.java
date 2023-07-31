@@ -1,4 +1,4 @@
-package fundamentals.has_a;
+package fundamentals.oop.has_a;
 
 public class Composition {
     public static void main(String[] args) {
